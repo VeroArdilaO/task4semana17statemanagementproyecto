@@ -1,0 +1,38 @@
+<h1 class="text-gray-800 text-3xl font-semibold text-center p-5">BOOK MANAGER</h1>
+
+<div class="flex justify-center">
+  <button (click)="ReturntoForm()"  class=" text-2xl  mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3 w-72"> Return To  Reactive Form</button>
+</div>
+
+
+<div class="grid grid-cols-4 place-items-center">
+
+    <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20" *ngFor=" let book of books$ | async ">
+      <div>
+        <h2 class="text-gray-800 text-3xl font-semibold">{{book.title}}</h2>
+        <p class="mt-2 text-gray-600">{{book.description}}</p>
+      </div>
+      <div class="flex justify-end mt-4">
+
+        <a (click) = "callSession(book.id)"  class="text-xl font-medium text-indigo-500 cursor-pointer">Schedule Club Session - #Id: {{book.id}} </a>
+
+      </div>
+
+      <div class="flex justify-center">
+        <button (click)="removeCard(book.id)"  class=" text-2xl  mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3 w-72"> Remove a Card </button>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+    
+    
+   
